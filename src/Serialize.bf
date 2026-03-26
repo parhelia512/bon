@@ -537,6 +537,7 @@ namespace Bon.Integrated
 			let res = type.GetCustomAttribute<BonPolyNameAttribute>();
 			if (res case .Ok(let attr))
 			{
+				Debug.Assert(attr.name != null);
 				into.Append(attr.name);
 			}
 			else type.GetFullName(.. into);
